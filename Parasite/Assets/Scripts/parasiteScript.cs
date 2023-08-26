@@ -36,7 +36,7 @@ public class parasiteScript : MonoBehaviour
             radius.GetComponent<SpriteRenderer>().color = new Color32(0, 0, 0, 0);
             scope.GetComponent<SpriteRenderer>().color = new Color32(0, 0, 0, 0);
             RaycastHit other;
-            Debug.DrawRay(transform.position, direction, Color.yellow);
+            Debug.DrawRay(transform.position, direction);
             Debug.Log(direction);
             if (Physics.Raycast(transform.position, direction, out other))
             {
