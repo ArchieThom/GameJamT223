@@ -8,16 +8,10 @@ public class Buttons : MonoBehaviour
 {
     public GameObject pauseScreen;
     public GameObject pauseButton;
-    public GameObject transition;
+    public GameObject deathScreen;
 
     public void Play()
     {
-        SpriteRenderer render = transition.GetComponent<SpriteRenderer>();
-        render.color = new Color32(0, 0, 0, 0);
-        for (byte i = 0; i < 255; i += 10)
-        {
-            render.color = new Color32(0, 0, 0, i);
-        }
         SceneManager.LoadScene("Main");
     }
 
@@ -43,5 +37,12 @@ public class Buttons : MonoBehaviour
     public void ReturnToMenu()
     {
         SceneManager.LoadScene("SampleScene");
+    }
+
+    public void Death()
+    {
+        Time.timeScale = 0;
+        deathScreen.SetActive(true);
+        pauseButton.SetActive(false);
     }
 }
